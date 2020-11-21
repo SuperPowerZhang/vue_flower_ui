@@ -3,10 +3,16 @@
 </template>
 
 <script>
-import Topnav from './components/Topnav.vue'
+import {ref,provide} from 'vue';
 
 export default {
   name: 'App',
-  components:{Topnav}
+    setup(){
+      const width=document.documentElement.clientWidth
+        console.log(width)
+      const asideVisible=ref(width>500?true:false)
+        provide('asideVisible',asideVisible)
+    },
+
 }
 </script>
