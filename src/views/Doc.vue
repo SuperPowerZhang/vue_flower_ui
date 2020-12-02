@@ -60,7 +60,6 @@
            background: lightblue;
            width: 150px;
            padding: 16px 0;
-           margin-top: 70px;
            height: 100%;
            z-index: $aside-index;
            >h2 {
@@ -83,7 +82,6 @@
             >.main{
                 overflow: auto;
                 padding: 16px 0;
-                padding-top: 70px;
             }
         }
         }
