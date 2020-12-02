@@ -1,0 +1,48 @@
+<template>
+    <div>Button</div>
+    <div>Button</div><div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+    <div>Button</div>
+
+</template>
+
+<script>
+    export default {
+        name: "Button"
+    }
+</script>
+
+<style scoped>
+
+</style>

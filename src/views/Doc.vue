@@ -11,7 +11,9 @@
                 <li><router-link to="doc/tabs">Tabs 组件</router-link></li>
             </ol>
         </div>
-        <div class="main">主要内容</div>
+        <div class="main">
+            <router-view />
+        </div>
     </div>
     </div>
 </template>
@@ -53,11 +55,37 @@
             @media (max-width: 500px) {
                 padding-left: 0;
             }
-            >.aside{
-                background-color: pink;
-            }
+       >.aside{
+           background: lightblue;
+           width: 150px;
+           padding: 16px 0;
+           position: fixed;
+           top: 0;
+           left: 0;
+           padding-top: 70px;
+           height: 100%;
+           z-index: $aside-index;
+           >h2 {
+               margin-bottom: 4px;
+               padding: 0 16px;
+           }
+           >ol {
+               >li {
+                   >a {
+                       display: block;
+                       padding: 4px 16px;
+                       text-decoration: none;
+                   }
+                   .router-link-active {
+                       background: white;
+                   }
+               }
+           }
+       }
         }
-
-    }
+        }
+    /*main {*/
+    /*    overflow: auto;*/
+    /*}*/
 
 </style>
