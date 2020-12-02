@@ -54,15 +54,13 @@
             padding-left: 156px;
             @media (max-width: 500px) {
                 padding-left: 0;
+                margin-top: 20px;
             }
        >.aside{
            background: lightblue;
            width: 150px;
            padding: 16px 0;
-           position: fixed;
-           top: 0;
-           left: 0;
-           padding-top: 70px;
+           margin-top: 70px;
            height: 100%;
            z-index: $aside-index;
            >h2 {
@@ -82,10 +80,13 @@
                }
            }
        }
+            >.main{
+                overflow: auto;
+                padding: 16px 0;
+                padding-top: 70px;
+            }
         }
         }
-    /*main {*/
-    /*    overflow: auto;*/
-    /*}*/
+
 
 </style>

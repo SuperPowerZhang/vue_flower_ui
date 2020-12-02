@@ -8,3 +8,5 @@ import {router} from './router'
 const hello=createApp(App)
 hello.use(router)
 hello.mount('#app')
+
+

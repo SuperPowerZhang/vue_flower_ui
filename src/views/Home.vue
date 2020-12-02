@@ -5,9 +5,9 @@
         <h1>Flower UI</h1>
         <h2>厉害的UI框架</h2>
          <p class="actions">
-             <a href="https://github.com/SuperPowerZhang/vue_flower_ui">Github</a>
-             <router-link to="/doc">开始</router-link>
-         </p>
+        <a href="https://github.com/SuperPowerZhang/vue_flower_ui">Github</a>
+        <router-link to="/doc">开始</router-link>
+    </p>
     </div>
     <div>Home 首页</div>
 </template>
