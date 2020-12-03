@@ -1,10 +1,10 @@
 <template>
-    <div>Tabs</div>
+    <div>Dialog</div>
 </template>
 
 <script>
     export default {
-        name: "Tabs"
+        name: "DialogDemo"
     }
 </script>
 
