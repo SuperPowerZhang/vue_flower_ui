@@ -57,17 +57,26 @@
                 margin-top: 20px;
             }
        >.aside{
-           background: lightblue;
+           background: rgb(255, 255, 255);
            width: 150px;
            padding: 16px 0;
            height: 100%;
            z-index: $aside-index;
+           color: rgb(36, 41, 46);
            >h2 {
                margin-bottom: 4px;
                padding: 0 16px;
+               @media (max-width: 500px) {
+                   font-size: 20px;
+               }
            }
            >ol {
                >li {
+                   &:hover,
+                   &:focus{
+                       background-color: rgb(3, 102, 214);
+                       color: rgb(255,255,255);
+                   }
                    >a {
                        display: block;
                        padding: 4px 16px;

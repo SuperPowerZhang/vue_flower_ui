@@ -2,8 +2,8 @@
     <div class="topnav">
         <div class="toggleAside" @click="toggleAside"></div>
         <div class="logo" >
-            logo
-            <svg></svg>
+            <img src="../assets/logonew.jpg" style="width: 50px;height: 50px">
+
             </div>
         <ul class="menu">
             <li>
