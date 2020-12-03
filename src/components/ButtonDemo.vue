@@ -1,6 +1,10 @@
 <template>
-  <Button :size="size" :testBool="testBool" :testNone disabled @click="OnClick" @mouseover="OnMouseOver" @focus="OnFocus">hello</Button>
-
+  <Button >hello</Button>
+  <Button :theme="theme[0]">hello</Button>
+  <Button :theme="theme[1]">hello</Button>
+  <Button :theme="theme[2]">hello</Button>
+  <Button :theme="theme[3]">hello</Button>
+  <Button :theme="theme[4]">hello</Button>
 </template>
 
 <script lang="ts">
@@ -9,6 +13,7 @@
         name: "ButtonDemo",
         components:{ Button },
         setup(){
+          const theme=["button","link","text","disabled","loading"]
           const size=100
           const testBool=true
             const OnClick=function(){
@@ -20,11 +25,11 @@
             const OnFocus=function () {
                 console.log(333)
             }
-            return {size,testBool,OnClick,OnMouseOver,OnFocus}
+            return {theme,size,testBool,OnClick,OnMouseOver,OnFocus}
         }
     }
 </script>
 
-<style scoped>
+<style >
 
 </style>
