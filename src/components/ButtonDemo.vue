@@ -18,7 +18,7 @@
       <Button :theme="theme[1]">中文本</Button>
       <Button :size="size[1]" :theme="theme[1]">小文本</Button>
     </div>
-    <h3>有趣示例</h3>
+    <h3>其他示例</h3>
     <div class="flower-button-container">
       <Button disabled>不可点</Button>
       <Button loading>加载中</Button>

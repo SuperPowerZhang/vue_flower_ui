@@ -1,6 +1,8 @@
 <template>
     <div class="topnav">
-        <div class="toggleAside" @click="toggleAside"></div>
+        <div class="toggleAside" @click="toggleAside">
+            <i class="iconfont">&#xe64a;</i>
+            </div>
         <div class="logo" >
             <img src="../assets/logonew.jpg" style="width: 50px;height: 50px">
 
@@ -73,12 +75,17 @@
                 display: inline-block;
                 width: 32px;
                 height: 32px;
-                background-color: pink;
-            }
-
+                >.iconfont{
+                        font-family:"iconfont" !important;
+                        font-size:32px;
+                        font-style:normal;
+                    color: rgb(36, 41, 46);
+                        -webkit-font-smoothing: antialiased;
+                        -webkit-text-stroke-width: 0.2px;
+                        -moz-osx-font-smoothing: grayscale;
+                    }
+                }
     }
-
-
     }
 
 </style>

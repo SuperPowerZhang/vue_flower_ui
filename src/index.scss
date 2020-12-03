@@ -33,3 +33,12 @@ a {
   fill: currentColor;
   overflow: hidden;
 }
+@font-face {
+  font-family: 'iconfont';  /* project id 2246954 */
+  src: url('//at.alicdn.com/t/font_2246954_7y9oqrdqld.eot');
+  src: url('//at.alicdn.com/t/font_2246954_7y9oqrdqld.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_2246954_7y9oqrdqld.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_2246954_7y9oqrdqld.woff') format('woff'),
+  url('//at.alicdn.com/t/font_2246954_7y9oqrdqld.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_2246954_7y9oqrdqld.svg#iconfont') format('svg');
+}

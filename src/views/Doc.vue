@@ -1,8 +1,8 @@
 <template>
     <div class="layout">
         <Topnav class="nav"/>
-    <div class="content">
-        <div class="aside" v-if="asideVisible">
+        <div class="content">
+           <div class="aside" v-if="asideVisible">
             <h2>组件列表</h2>
             <ol>
                 <li><router-link to="doc/switch">Switch 组件</router-link></li>
@@ -49,16 +49,18 @@
         }
         >.content {
             display: flex;
+            flex-direction: row;
+            justify-content: center;
             flex-grow: 1;
             margin-top: 70px;
-            padding-left: 156px;
+            /*padding-left: 156px;*/
             @media (max-width: 500px) {
                 padding-left: 0;
                 margin-top: 20px;
             }
        >.aside{
            background: rgb(255, 255, 255);
-           width: 150px;
+           width: 180px;
            padding: 16px 0;
            height: 100%;
            z-index: $aside-index;
@@ -66,12 +68,16 @@
            >h2 {
                margin-bottom: 4px;
                padding: 0 16px;
+               width: 110px;
                @media (max-width: 500px) {
-                   font-size: 20px;
+                   font-size: 18px;
+                   font-weight: 700;
+                   padding: 0 8px;
                }
            }
            >ol {
                >li {
+
                    &:hover,
                    &:focus{
                        background-color: rgb(3, 102, 214);
@@ -79,7 +85,8 @@
                    }
                    >a {
                        display: block;
-                       padding: 4px 16px;
+                       padding: 6px 8px;
+                       color:rgb(149, 157, 165);
                        text-decoration: none;
                    }
                    .router-link-active {
