@@ -1,5 +1,5 @@
 <template>
-  <Button :size="size" :testBool="testBool" disabled @click="OnClick" @mouseover="OnMouseOver" @focus="OnFocus">hello</Button>
+  <Button :size="size" :testBool="testBool" :testNone disabled @click="OnClick" @mouseover="OnMouseOver" @focus="OnFocus">hello</Button>
 
 </template>
 

@@ -16,6 +16,7 @@
             console.log(typeof context.attrs.size)
             console.log(typeof context.attrs.testBool)
             console.log(typeof context.attrs.disabled)
+            console.log(typeof context.attrs.testNone)
         }
 
     }
