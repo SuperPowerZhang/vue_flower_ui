@@ -9,10 +9,10 @@
         <main>
            <slot name="content"/>
         </main>
-    <footer>
+    <footer v-if="buttonNeed">
         <Button @click="clickOk">确认</Button>
         <Button :theme="theme" @click="clickCancel">取消</Button>
-    </footer>
+    </footer >
             </div>
     </div>
     </Teleport>
@@ -26,7 +26,7 @@
         props:{
             visible:{
                 type:Boolean,
-                default:true
+                default:false
             },
             WrapperClose:{
                 type:Boolean,
@@ -41,6 +41,10 @@
             title:{
                 type:String,
                 default:'标题填写预警'
+            },
+            buttonNeed:{
+                type:Boolean,
+                default:true
             }
         },
         setup(props:any,context:any){
@@ -60,8 +64,11 @@
                 e.stopPropagation()
             }
             const clickCancel=(e:Event)=>{
-                context.emit('cancel')
-                close()
+                if(props.ok?.()===true){
+                    //emit cancel目前未用到
+                    context.emit('cancel')
+                    close()
+                }
                 e.stopPropagation()
             }
             return {theme,clickOk,clickCancel,close,clickWrapper}
@@ -85,7 +92,7 @@
         width: 100vw;
         height: 100vh;
         font-size: 14px;
-        z-index:10;
+        z-index:100;
         .flower-dialog{
             background-color: #fff;
             margin-left: 16px;
