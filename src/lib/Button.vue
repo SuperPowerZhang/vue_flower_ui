@@ -61,7 +61,7 @@ $color: rgb(36, 41, 46);
 $light-grey:rgb(250, 251, 252);
 $radius: 6px;
 $white:rgb(255, 255, 255);
-$margin:8px;
+$margin:4px;
 .flower-button {
     box-sizing: border-box;
     padding: $padding-normal;
@@ -71,8 +71,7 @@ $margin:8px;
     border-radius: $radius;
     background-color: $green;
     color: $white;
-    margin-left: $margin;
-    margin-right:$margin;
+    margin: $margin;
     vertical-align: middle;
     height: 36px;
     &.theme-button{

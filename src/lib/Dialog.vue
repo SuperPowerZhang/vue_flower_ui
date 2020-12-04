@@ -104,7 +104,7 @@
                 margin-right: auto;
             }
 
-        header{
+        >header{
                 background-color: rgb(246, 248, 250);
                 padding: 16px;
                 font-weight: 600;
@@ -117,11 +117,11 @@
                 color: rgb(88, 96, 105);
             }
             }
-            main{
+            >main{
                 padding: 16px;
                 border-bottom: $border ;
             }
-            footer{
+            >footer{
                 display: flex;
                 justify-content: center;
                 padding: 16px;
