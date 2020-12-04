@@ -1,6 +1,6 @@
 <template>
     <template v-if="visible">
-    <div> <slot />
+    <Teleport to="body">
         <div class="flower-dialogWrapper" @click="clickWrapper">
             <div class="flower-dialog">
         <header>
@@ -15,7 +15,7 @@
     </footer>
             </div>
     </div>
-    </div>
+    </Teleport>
     </template>
 </template>
 
