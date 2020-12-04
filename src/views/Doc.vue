@@ -57,14 +57,17 @@
             @media (max-width: 500px) {
                 padding-left: 0;
                 margin-top: 20px;
+                justify-content:start ;
             }
        >.aside{
            background: rgb(255, 255, 255);
-           width: 180px;
            padding: 16px 0;
            height: 100%;
            z-index: $aside-index;
            color: rgb(36, 41, 46);
+           @media (min-width: 500px) {
+               width: 180px;
+           }
            >h2 {
                margin-bottom: 4px;
                padding: 0 16px;

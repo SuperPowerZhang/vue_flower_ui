@@ -61,12 +61,11 @@ $color: rgb(36, 41, 46);
 $light-grey:rgb(250, 251, 252);
 $radius: 6px;
 $white:rgb(255, 255, 255);
-$margin:4px;
+$margin:8px;
 .flower-button {
     box-sizing: border-box;
     padding: $padding-normal;
     cursor: pointer;
-    margin-top: 8px;
     outline: none;
     border: 1px solid $border-color;
     border-radius: $radius;
