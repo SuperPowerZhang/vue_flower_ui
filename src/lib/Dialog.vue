@@ -1,8 +1,9 @@
 <template>
+    <template v-if="visible">
     <div> <slot />
         <div class="flower-dialogWrapper">
             <div class="flower-dialog">
-        <header>标题 <i class="iconfont">&#xe644;</i></header>
+        <header>标题 <i class="iconfont" @click="close">&#xe644;</i></header>
         <main>
             <p>zizizi</p>
             <p>zizizizi</p>
@@ -15,19 +16,27 @@
             </div>
     </div>
     </div>
-
-
+    </template>
 </template>
 
 <script lang="ts">
     import Button from "./Button.vue";
     export default {
         name: "Dialog",
-        setup(){
+        setup(props:any,context:any){
             const theme='text'
-            return {theme}
+            const close=()=>{
+                context.emit('update:visible',false)
+            }
+            return {theme,close}
         },
-        components:{Button}
+        components:{Button},
+        props:{
+            visible:{
+                type:Boolean,
+                default:true
+            }
+        }
     }
 </script>
 
