@@ -1,17 +1,17 @@
 <template>
     <template v-if="visible">
     <div> <slot />
-        <div class="flower-dialogWrapper">
+        <div class="flower-dialogWrapper" @click="clickWrapper">
             <div class="flower-dialog">
-        <header>标题 <i class="iconfont" @click="close">&#xe644;</i></header>
+        <header>
+            <slot name="title"/>
+            <i class="iconfont" @click="close">&#xe644;</i></header>
         <main>
-            <p>zizizi</p>
-            <p>zizizizi</p>
-
+           <slot name="content"/>
         </main>
     <footer>
-        <Button >确认</Button>
-        <Button :theme="theme">取消</Button>
+        <Button @click="clickOk">确认</Button>
+        <Button :theme="theme" @click="clickCancel">取消</Button>
     </footer>
             </div>
     </div>
@@ -23,20 +23,51 @@
     import Button from "./Button.vue";
     export default {
         name: "Dialog",
+        props:{
+            visible:{
+                type:Boolean,
+                default:true
+            },
+            WrapperClose:{
+                type:Boolean,
+                default: true
+            },
+            ok:{
+                type:Function
+            },
+            cancel:{
+                type:Function
+            },
+            title:{
+                type:String,
+                default:'标题填写预警'
+            }
+        },
         setup(props:any,context:any){
             const theme='text'
             const close=()=>{
                 context.emit('update:visible',false)
             }
-            return {theme,close}
+            const clickWrapper=()=>{
+                if(props.WrapperClose){
+                    close()
+                }
+            }
+            const clickOk=(e:Event)=>{
+                if(props.ok?.()===true){
+                    close()
+                }
+                e.stopPropagation()
+            }
+            const clickCancel=(e:Event)=>{
+                context.emit('cancel')
+                close()
+                e.stopPropagation()
+            }
+            return {theme,clickOk,clickCancel,close,clickWrapper}
         },
         components:{Button},
-        props:{
-            visible:{
-                type:Boolean,
-                default:true
-            }
-        }
+
     }
 </script>
 
@@ -54,6 +85,7 @@
         width: 100vw;
         height: 100vh;
         font-size: 14px;
+        z-index:10;
         .flower-dialog{
             background-color: #fff;
             margin-left: 16px;

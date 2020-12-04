@@ -5,10 +5,10 @@
            <div class="aside" v-if="asideVisible">
             <h2>组件列表</h2>
             <ol>
-                <li><router-link to="doc/switch">Switch 组件</router-link></li>
-                <li><router-link to="doc/button">Button 组件</router-link></li>
-                <li><router-link to="doc/dialog">Dialog 组件</router-link></li>
-                <li><router-link to="doc/tabs">Tabs 组件</router-link></li>
+                <li><router-link to="/doc/switch">Switch 组件</router-link></li>
+                <li><router-link to="/doc/button">Button 组件</router-link></li>
+                <li><router-link to="/doc/dialog">Dialog 组件</router-link></li>
+                <li><router-link to="/doc/tabs">Tabs 组件</router-link></li>
             </ol>
         </div>
         <div class="main">
@@ -50,7 +50,6 @@
         >.content {
             display: flex;
             flex-direction: row;
-            justify-content: center;
             flex-grow: 1;
             margin-top: 70px;
             /*padding-left: 156px;*/
@@ -58,6 +57,9 @@
                 padding-left: 0;
                 margin-top: 20px;
                 justify-content:start ;
+            }
+            @media (min-width: 500px) {
+                margin-left: 100px;
             }
        >.aside{
            background: rgb(255, 255, 255);
@@ -67,6 +69,7 @@
            color: rgb(36, 41, 46);
            @media (min-width: 500px) {
                width: 180px;
+
            }
            >h2 {
                margin-bottom: 4px;
