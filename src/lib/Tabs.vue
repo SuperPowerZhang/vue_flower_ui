@@ -1,15 +1,12 @@
 <template>
 <!--    <slot />-->
-    <div class="flower-tabs-hContainer">
+    <div class="flower-tabs-hContainer" :class="{[`theme-${theme}`]:theme}">
         <div @click="select(t)" class="flower-tab-h" :class="{selected:t===selected}" v-for="(t,index) in titles" :key="index">{{t}}</div>
     </div>
-    <div class="flower-tabs-contentContainer">
+    <div class="flower-tabs-contentContainer" :class="{[`theme-${theme}`]:theme}">
         <component  v-for="(c,index) in defaults" :is="c"  :class="{selected:c.title===selected}" :key="index" />
     </div>
-    <!--        -->
-<!--    <component :is="defaults[0]" />-->
-<!--    <component :is="defaults[1]" />-->
-<!--    <component :is="defaults[2]" />-->
+
 
 </template>
 
@@ -22,6 +19,10 @@
         props:{
             selected: {
                 type:String
+            },
+            theme:{
+                type:String,
+                default:"white"
             }
         },
         setup(props:any,context:any){
@@ -48,21 +49,16 @@
     $distance:16px;
     $red : rgb(249,130,108);
     .flower-tabs-hContainer{
-        width: 100%;
         margin-left: $distance;
         margin-right: $distance;
         margin-bottom: 32px;
         display: flex;
         justify-content: space-between;
         border-bottom:1px solid rgb(209, 213, 218);
-        @media(max-width:500px){
-            width: 100%;
-        }
         .flower-tab-h{
             padding:8px $distance;
             margin-left: auto;
             margin-right: auto;
-            margin-bottom: 2px;
             border-bottom: 2px solid transparent;
             &:hover,
             &:focus{
@@ -78,6 +74,62 @@
             }
 
         }
+        &.theme-white {
+            @media(max-width: 500px) {
+                width: 100%;
+            }
+        }
+        &.theme-black{
+            @media(max-width:500px){
+                width: 100%;
+            }
+            background-color: rgb(36, 41, 46);
+            .flower-tab-h{
+                color: rgb(255,255,255);
+                &:hover,
+                &:focus{
+                    color:rgb(150, 182, 193);
+                }
+                &.selected{
+                    font-weight: 600;
+                    border-bottom:2px solid rgb(255,255,255);
+                    transition: all 250ms;
+                }
+            }
+        }
+        &.theme-simple{
+            display: inline-block;
+            justify-content: space-between;
+            border:1px solid rgb(225, 228, 232);
+            border-right: 0 solid rgb(225, 228, 232);
+            border-radius: 6px;
+            margin-bottom: 16px;
+            .flower-tab-h{
+                display: inline-block;
+                color: rgb(36,41,46);
+                border-bottom: 0;
+                border-right: 1px solid rgb(225, 228, 232);
+                padding: 5px 16px;
+                &:hover,
+                &:focus{
+                    background-color: rgb(3, 102, 214);
+                    color:rgb(255,255,255);
+                }
+                &.selected{
+                    font-weight: 600;
+                    transition: all 250ms;
+                    background-color: rgb(3, 102, 214);
+                    color:rgb(255,255,255);
+                }
+            }
+            :first-child{
+                border-radius: 6px 0 0 6px;
+            }
+            :last-child{
+                border-radius:  0 6px 6px 0;
+            }
+        }
+
     }
     .flower-tabs-contentContainer{
         margin-left: $distance;
@@ -101,6 +153,13 @@
                 width: 100%;
                 font-size: 14px;
                 padding:24px;
+            }
+        }
+        &.theme-simple{
+            background-color: rgb(246, 248, 250);
+            >div{
+                text-align: left;
+                padding: 16px;
             }
         }
 

@@ -1,12 +1,31 @@
 <template>
     <FlowerContainer>
-        <template v-slot:description>默认Tabs</template>
+        <template v-slot:description>默认导航栏</template>
         <template v-slot:lib>
             <Tabs v-model:selected="x" >
                 <Tab title="导航1" >导航1内容</Tab>
                 <Tab title="导航2">导航2内容</Tab>
                 <Tab >导航3内容</Tab>
-
+            </Tabs>
+        </template>
+    </FlowerContainer>
+    <FlowerContainer>
+        <template v-slot:description>对比导航栏</template>
+        <template v-slot:lib>
+            <Tabs v-model:selected="y" :theme="theme[0]" >
+                <Tab title="导航1" >导航1内容</Tab>
+                <Tab title="导航2">导航2内容</Tab>
+                <Tab >导航3内容</Tab>
+            </Tabs>
+        </template>
+    </FlowerContainer>
+    <FlowerContainer>
+        <template v-slot:description>简明导航栏</template>
+        <template v-slot:lib>
+            <Tabs v-model:selected="z" :theme="theme[1]" >
+                <Tab title="导航1" >导航1内容</Tab>
+                <Tab title="导航2">导航2内容</Tab>
+                <Tab >导航3内容</Tab>
             </Tabs>
         </template>
     </FlowerContainer>
@@ -23,7 +42,10 @@
         components: {Tab,Tabs,FlowerContainer},
         setup(){
             const x=ref('导航1')
-            return {x}
+            const y=ref('导航1')
+            const z=ref('导航1')
+            const theme=["black","simple"]
+            return {x,y,z,theme}
         }
     }
 </script>
