@@ -1,5 +1,6 @@
 
 <template>
+    <div class="home">
 <Topnav />
     <div class="banner">
         <h1>Flower UI</h1>
@@ -10,6 +11,7 @@
     </p>
     </div>
     <div>Home 首页</div>
+    </div>
 </template>
 
 <script>
@@ -26,6 +28,9 @@
     $green: #02bcb0;
     $border-radius: 4px;
     $color: #007974;
+    .home{
+        background: rgb(75,89,165);
+        background: linear-gradient(90deg, rgba(75,89,165,1) 0%, rgba(112,154,209,1) 100%);
     .topnavAndBanner {
         background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
         clip-path: ellipse(80% 60% at 50% 40%);
@@ -78,7 +83,8 @@
     }
     }
     .banner {
-        color: $color;
+        /*font-family: "Luckiest Guy";*/
+        color: rgb(22,22,22);
         padding: 100px 0;
         display: flex;
         justify-content: center;
@@ -88,7 +94,7 @@
         padding: 8px 0;
     a {
         margin: 0 8px;
-        background: $green;
+        background: rgb(16, 168, 13);
         color: white;
         display: inline-block;
         padding: 8px 24px;
@@ -96,6 +102,7 @@
     &:hover {
          text-decoration: none;
      }
+    }
     }
     }
     }
