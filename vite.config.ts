@@ -1,4 +1,4 @@
-import {md} from "./plugin/md"
+import { md } from "./plugin/md"
 
 export default {
     plugins :[md()]
