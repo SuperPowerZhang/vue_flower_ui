@@ -19,7 +19,7 @@
             <template v-slot:description>自动关闭的对话框</template>
             <template v-slot:lib>
                 <Button  @click="showDialogWhile" >展示</Button>
-                <Dialog  :visible="y"  :WrapperClose="WrapperClose" :buttonNeed="buttonNeed" :ok="ok" :cancel="cancel" :title="title" >
+                <Dialog  v-model:visible="y"  :WrapperClose="WrapperClose" :buttonNeed="buttonNeed" :ok="ok" :cancel="cancel" :title="title" >
                     <template v-slot:title>
                         <span>标题替换提示</span>
                     </template>
@@ -60,7 +60,7 @@
         setup(){
             const theme='text'
             const x=ref(false)
-            let y=false
+            const y=ref(false)
             const WrapperClose= true
             const buttonNeed=false
             const toggle=()=>{
@@ -79,14 +79,14 @@
             }
             const showDialogWhile=()=>{
                 console.log(2222)
-                console.log(y)
-                y =true
-                console.log(y)
+                console.log( y.value)
+                y.value =true
+                console.log( y.value)
                 setTimeout(()=>{
-                    y=false
+                    y.value=false
                 },250)
                 setTimeout(()=>{
-                    console.log(y,"更新了")
+                    console.log( y.value,"更新了")
                 },500)
             }
 
