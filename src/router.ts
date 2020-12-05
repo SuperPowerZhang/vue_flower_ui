@@ -23,9 +23,6 @@ export const router=createRouter({
                     path:"",component:Intro
                 },
                 {
-                    path:"intro",component:Intro
-                },
-                {
                     path:"get-started",component:GetStarted
                 },
                 {

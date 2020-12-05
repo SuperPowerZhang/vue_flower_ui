@@ -5,7 +5,7 @@
            <div class="aside" v-if="asideVisible">
                <h4>文档</h4>
                <ol>
-                   <li><router-link to="/doc/intro">介绍</router-link></li>
+                   <li><router-link to="/doc">介绍</router-link></li>
                    <li><router-link to="/doc/install">安装</router-link></li>
                    <li><router-link to="/doc/get-started">开始使用</router-link></li>
                </ol>
@@ -64,7 +64,7 @@
                         padding-bottom:8px;
                         text-decoration: none;
                         font-weight: 600;
-                        &.router-link-active{
+                        &.router-link-exact-active{
                             color:rgb(190, 189, 165)
                         }
                     }

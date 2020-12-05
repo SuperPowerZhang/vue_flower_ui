@@ -1,4 +1,8 @@
 <template>
+    <article class="markdown-body">
+        <h1>Unicorns</h1>
+        <p>All the things</p>
+    </article>
     # 安装
 
     打开终端运行下列命令：
