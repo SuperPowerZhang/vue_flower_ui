@@ -3,6 +3,12 @@
         <Topnav class="nav" toggleAsideButtonVisible="true"/>
         <div class="content">
            <div class="aside" v-if="asideVisible">
+               <h4>文档</h4>
+               <ol>
+                   <li><router-link to="/doc/intro">介绍</router-link></li>
+                   <li><router-link to="/doc/install">安装</router-link></li>
+                   <li><router-link to="/doc/get-started">开始使用</router-link></li>
+               </ol>
             <h4>组件列表</h4>
             <ol>
                 <li><router-link to="/doc/switch">Switch 组件</router-link></li>
@@ -48,6 +54,7 @@
             color: rgb(255,255,255);
             > h4 {
                 padding: 16px 12px;
+                text-align: center;
             }
             > ol {
                 > li {
@@ -57,11 +64,13 @@
                         padding-bottom:8px;
                         text-decoration: none;
                         font-weight: 600;
+                        &.router-link-active{
+                            color:rgb(190, 189, 165)
+                        }
                     }
                     &:hover,
                     &:focus {
-                        background-color: rgb(3, 102, 214);
-                        color: rgb(255, 255, 255);
+                        color:rgb(190, 189, 165)
                     }
                 }
             }

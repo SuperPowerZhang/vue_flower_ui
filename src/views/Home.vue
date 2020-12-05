@@ -9,7 +9,7 @@
             </svg>
         </div>
         <h1>Flower UI</h1>
-        <h2>厉害的UI框架</h2>
+        <h2>好用的UI框架</h2>
          <p class="actions">
              <router-link to="/doc">开始</router-link>
              <a href="https://github.com/SuperPowerZhang/vue_flower_ui">Github</a>
@@ -70,8 +70,8 @@
     .home{
         background: rgb(252,250,217);
         background: linear-gradient(90deg, rgba(252,250,217,1) 0%, rgba(222,201,225,1) 100%);
-        height: 100vh;
         max-width:1200px;
+        height: 100vh;
         .banner {
             /*font-family: "Luckiest Guy";*/
             color: rgb(22,22,22);
