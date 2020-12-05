@@ -1,7 +1,7 @@
 
 <template>
     <div class="home">
-    <Topnav />
+    <Topnav :toggleAsideButtonVisible="false"/>
     <div class="banner">
         <div class="logo" >
             <svg class="icon" aria-hidden="true">
@@ -20,19 +20,31 @@
                     <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-Vue"></use>
                 </svg>
-                    基于Vue 3
+                    <div>
+                        <h4>基于Vue 3</h4>
+                        <p>使用了Vue3的API</p>
+                    </div>
+
                 </li>
                 <li>
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-typescript-def"></use>
                     </svg>
-                    基于Typescript
+                    <div>
+                        <h4>基于Typescript</h4>
+                        <p>源代码采用typescript书写</p>
+                </div>
+
                 </li>
                 <li>
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-daima"></use>
                     </svg>
-                    组件易用
+                    <div>
+                        <h4>代码易读</h4>
+                        <p>组件源代码简洁易用</p>
+                    </div>
+
                 </li>
             </ul>
         </div>
@@ -71,10 +83,10 @@
             margin-right: 16px;
             >h1{
                 font-family:myFirstFont;
-                margin-bottom:20px ;
+                margin-bottom:16px ;
             }
              >h2{
-                 margin-bottom:16px;
+                 margin-bottom:10px;
              }
             >.actions {
                 padding: 8px 0;
@@ -93,12 +105,12 @@
 
             }
             >.logo{
-                 margin-top: 30px;
-                 margin-bottom: 24px;
+                 margin-top: 24px;
+                 margin-bottom: 20px;
                  max-width: 6em;
                  >svg {
-                     width: 100px;
-                     height: 100px;
+                     width: 80px;
+                     height: 80px;
                  }
              }
             >.flower-home-intro{
@@ -109,67 +121,30 @@
                     display: flex;
                     flex-wrap: wrap;
                     li{
-                    display: inline-block;
+                    display: inline-grid;
+                    grid-template-columns:40px 150px ;
                     padding: 8px 16px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    text-align: center;
+                    text-align: left;
                     justify-content: space-between;
+                        line-height: 30px;
+                        >div{
+                            text-align: left;
+                            margin-left: 8px;
+                            h4{
+                                font-size: 16px;
+                            }
+                            p{
+                                font-size: 12px;
+                            }
+                        }
                     >.icon{
-                        font-size: 24px ;
+                        font-size: 40px ;
+                        margin-top: 10px;
                     }
                 }
             }
             }
         }
     }
-    /*.features {*/
-    /*    margin: 64px auto;*/
-    /*    padding: 0 16px;*/
-    /*@media (min-width: 800px) {*/
-    /*    width: 800px;*/
-    /*    >ul {*/
-    /*    >li {*/
-    /*        width: 50%;*/
-    /*    }*/
-    /*}*/
-    /*}*/
-    /*@media (min-width: 1200px) {*/
-    /*    width: 1200px;*/
-    /*    >ul {*/
-    /*    >li {*/
-    /*        width: 33.3333%;*/
-    /*    }*/
-    /*}*/
-    /*}*/
-    /*>ul {*/
-    /*    display: flex;*/
-    /*    flex-wrap: wrap;*/
-    /*>li {*/
-    /*    margin: 16px 0;*/
-    /*    display: grid;*/
-    /*    justify-content: start;*/
-    /*    align-content: space-between;*/
-    /*    grid-template-areas:*/
-    /*            "icon title"*/
-    /*            "icon text";*/
-    /*    grid-template-columns: 80px auto;*/
-    /*    grid-template-rows: 1fr auto;*/
-    /*>svg {*/
-    /*    grid-area: icon;*/
-    /*    width: 64px;*/
-    /*    height: 64px;*/
-    /*}*/
-    /*>h3 {*/
-    /*    grid-area: title;*/
-    /*    font-size: 28px;*/
-    /*}*/
-    /*>p {*/
-    /*    grid-area: text*/
-    /*}*/
-    /*}*/
-    /*}*/
-    /*}*/
-
 
 </style>

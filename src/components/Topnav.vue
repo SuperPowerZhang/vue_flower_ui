@@ -1,8 +1,7 @@
 <template>
     <div class="topnav">
-<!--           -->
-        <div class="toggleAside" >
-            <svg class="icon" aria-hidden="true"  @click="toggleAside">
+        <div v-if="toggleAsideButtonVisible" class="toggleAside" @click="toggleAside" >
+            <svg class="icon" aria-hidden="true"  >
                 <use xlink:href="#icon-liebiao"></use>
             </svg>
         </div>
@@ -23,8 +22,14 @@
     import {inject,Ref} from "vue"
     export default {
         name: "Topnav",
+        props:{
+            toggleAsideButtonVisible:{
+                type:Boolean,
+                default:false
+            }
+        },
         setup(){
-            const asideVisible= inject< Ref <boolean>>('true')
+            const asideVisible= inject < Ref < boolean >> ("asideVisible")
             const toggleAside=()=>{
                 asideVisible.value=!asideVisible.value
             }
