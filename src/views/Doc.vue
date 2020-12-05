@@ -104,6 +104,9 @@
             >.main{
                 overflow: auto;
                 padding: 16px ;
+                @media(max-width:500px){
+                    width: 100%;
+                }
             }
         }
         }
