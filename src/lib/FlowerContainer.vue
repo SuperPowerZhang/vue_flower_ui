@@ -32,9 +32,9 @@
         }
         >.flower-container-lib{
             border-radius: 6px;
-            display: flex;
+            /*display: flex;*/
             max-width: 1000px;
-            justify-content: space-between;
+            /*justify-content: space-between;*/
             flex-wrap: wrap;
             padding: 16px;
             @media (max-width: 500px) {

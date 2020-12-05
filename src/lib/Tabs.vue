@@ -47,8 +47,8 @@
     $distance:16px;
     $red : rgb(249,130,108);
     .flower-tabs-hContainer{
-        margin-left: $distance;
-        margin-right: $distance;
+        padding-left: $distance;
+        padding-right: $distance;
         margin-bottom: 32px;
         display: flex;
         justify-content: space-between;
@@ -101,6 +101,8 @@
             border:1px solid rgb(225, 228, 232);
             border-right: 0 solid rgb(225, 228, 232);
             border-radius: 6px;
+            padding-left: 0;
+            padding-right: 0;
             margin-bottom: 16px;
             .flower-tab-h{
                 display: inline-block;
@@ -157,8 +159,8 @@
         }
     }
     .flower-tabs-contentContainer{
-        margin-left: $distance;
-        margin-right: $distance;
+        padding-left: $distance;
+        padding-right: $distance;
         @media (max-width: 500px) {
             width: 100%;
             font-size: 14px;
@@ -181,6 +183,9 @@
             }
         }
         &.theme-simple{
+            padding-left: 0;
+            padding-right: 0;
+            margin-right:  $distance;
             background-color: rgb(246, 248, 250);
             >div{
                 text-align: left;

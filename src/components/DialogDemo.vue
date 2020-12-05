@@ -39,8 +39,6 @@
             </template>
         </FlowerContainer>
 
-
-
     </div>
 </template>
 
@@ -78,15 +76,9 @@
                 openDialog({title:"参数里的标题",content:"参数里的内容"})
             }
             const showDialogWhile=()=>{
-                console.log(2222)
-                console.log( y.value)
                 y.value =true
-                console.log( y.value)
                 setTimeout(()=>{
                     y.value=false
-                },250)
-                setTimeout(()=>{
-                    console.log( y.value,"更新了")
                 },500)
             }
 

@@ -48,7 +48,6 @@
             }
         },
         setup(props:any,context:any){
-            console.log(props.visible)
             const theme='text'
             const close=()=>{
                 context.emit('update:visible',false)
