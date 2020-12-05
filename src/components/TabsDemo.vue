@@ -1,11 +1,11 @@
 <template>
     <FlowerContainer>
-        <template v-slot:description>Tabs1</template>
+        <template v-slot:description>默认Tabs</template>
         <template v-slot:lib>
             <Tabs>
-                <Tab>Tab组件1</Tab>
-                <Tab>Tab组件2</Tab>
-                <Tab>Tab组件3</Tab>
+                <Tab title="1">Tab组件1</Tab>
+                <Tab title="2">Tab组件1</Tab>
+                <Tab >Tab组件3</Tab>
             </Tabs>
         </template>
     </FlowerContainer>

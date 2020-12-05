@@ -83,21 +83,24 @@
            }
            >ol {
                >li {
-
-                   &:hover,
-                   &:focus{
-                       background-color: rgb(3, 102, 214);
-                       color: rgb(255,255,255);
-                   }
                    >a {
                        display: block;
                        padding: 6px 8px;
                        color:rgb(149, 157, 165);
                        text-decoration: none;
                    }
-                   .router-link-active {
-                       background: white;
+                   &:hover,
+                   &:focus{
+                       background-color: rgb(3, 102, 214);
+                       color: rgb(255,255,255);
+                       >a{
+                           color: rgb(255,255,255);
+                       }
                    }
+                   /*.router-link-active {*/
+                   /*    background-color: rgb(3, 102, 214);*/
+                   /*    color: rgb(255,255,255);*/
+                   /*}*/
                }
            }
        }
