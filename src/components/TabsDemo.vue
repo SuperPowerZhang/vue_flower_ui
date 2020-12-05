@@ -29,6 +29,16 @@
             </Tabs>
         </template>
     </FlowerContainer>
+    <FlowerContainer>
+        <template v-slot:description>纵向导航栏</template>
+        <template v-slot:lib>
+            <Tabs v-model:selected="a" :theme="theme[2]" >
+                <Tab title="导航1" >导航1内容</Tab>
+                <Tab title="导航2">导航2内容</Tab>
+                <Tab >导航3内容</Tab>
+            </Tabs>
+        </template>
+    </FlowerContainer>
 </template>
 <!--                -->
 
@@ -44,8 +54,9 @@
             const x=ref('导航1')
             const y=ref('导航1')
             const z=ref('导航1')
-            const theme=["black","simple"]
-            return {x,y,z,theme}
+            const a=ref('导航1')
+            const theme=["black","simple","column"]
+            return {a,x,y,z,theme}
         }
     }
 </script>

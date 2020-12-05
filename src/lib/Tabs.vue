@@ -6,8 +6,6 @@
     <div class="flower-tabs-contentContainer" :class="{[`theme-${theme}`]:theme}">
         <component  v-for="(c,index) in defaults" :is="c"  :class="{selected:c.title===selected}" :key="index" />
     </div>
-
-
 </template>
 
 <script lang="ts">
@@ -129,7 +127,34 @@
                 border-radius:  0 6px 6px 0;
             }
         }
-
+        &.theme-column {
+            flex-direction: column;
+            font-size: 14px;
+            padding: 16px;
+            background-color:rgb(36, 41, 46);
+            width: 100%;
+            border-bottom: 0;
+            margin-bottom: 20px;
+            .flower-tab-h {
+                color: rgb(255,255,255);
+                display: block;
+                width: 100%;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                text-align: left;
+                border-bottom: 1px solid rgb(68, 77, 86);
+            &:hover,
+            &:focus{
+                color:rgb(150, 182, 193);
+                border-bottom: 1px solid rgb(68, 77, 86);
+            }
+            &.selected{
+                font-weight: 600;
+                border-bottom:1px solid rgb(68, 77, 86);
+                transition: all 250ms;
+            }
+        }
+        }
     }
     .flower-tabs-contentContainer{
         margin-left: $distance;
@@ -162,7 +187,12 @@
                 padding: 16px;
             }
         }
-
+        &.theme-column{
+            >div{
+                text-align: left;
+                padding: 16px;
+            }
+        }
     }
 
 </style>

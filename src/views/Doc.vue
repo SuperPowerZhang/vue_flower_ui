@@ -3,7 +3,7 @@
         <Topnav class="nav"/>
         <div class="content">
            <div class="aside" v-if="asideVisible">
-            <h2>组件列表</h2>
+            <h4>组件列表</h4>
             <ol>
                 <li><router-link to="/doc/switch">Switch 组件</router-link></li>
                 <li><router-link to="/doc/button">Button 组件</router-link></li>
@@ -24,8 +24,7 @@
         Ref
     } from "vue";
     import Topnav from '../components/Topnav.vue';
-
-
+    // import Tabs from '../lib/Tabs.vue'
     export default {
         name: "Doc",
         components:{
@@ -41,82 +40,79 @@
 <style lang="scss" scoped>
     $aside-index : 10;
     .layout {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        >.nav{
-            flex-shrink: 0;
+        > .content {
+        > .aside {
+            font-size: 14px;
+            padding: 16px;
+            background-color:rgb(36, 41, 46);
+            color: rgb(255,255,255);
+            > h4 {
+                padding: 16px 12px;
+            }
+            > ol {
+                > li {
+                    > a {
+                        display: block;
+                        padding-top: 8px ;
+                        padding-bottom:8px;
+                        text-decoration: none;
+                        font-weight: 600;
+                    }
+                    &:hover,
+                    &:focus {
+                        background-color: rgb(3, 102, 214);
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
         }
-        >.content {
-            display: flex;
-            flex-direction: row;
-            flex-grow: 1;
-            margin-top: 70px;
-            /*padding-left: 156px;*/
-            @media (max-width: 500px) {
-                padding-left: 0;
-                margin-top: 20px;
-                justify-content:start ;
-            }
-            @media (min-width: 500px) {
-                margin-left: 100px;
-            }
-       >.aside{
-           background: rgb(255, 255, 255);
-           padding: 16px 0;
-           height: 100%;
-           z-index: $aside-index;
-           color: rgb(36, 41, 46);
-           @media (min-width: 500px) {
-               width: 180px;
-           }
-           >h2 {
-               margin-bottom: 4px;
-               padding: 0 16px;
-               width: 180px;
-               text-align: center;
-               @media (max-width: 500px) {
-                   font-size: 18px;
-                   font-weight: 700;
-                   padding: 0 8px;
-                   width: 110px;
-               }
-           }
-           >ol {
-               >li {
-                   text-align: center;
-                   border-radius: 6px;
-                   >a {
-                       display: block;
-                       padding: 6px 8px;
-                       color:rgb(149, 157, 165);
-                       text-decoration: none;
-                   }
-                   &:hover,
-                   &:focus{
-                       background-color: rgb(3, 102, 214);
-                       color: rgb(255,255,255);
-                       >a{
-                           color: rgb(255,255,255);
-                       }
-                   }
-                   /*.router-link-active {*/
-                   /*    background-color: rgb(3, 102, 214);*/
-                   /*    color: rgb(255,255,255);*/
-                   /*}*/
-               }
-           }
-       }
             >.main{
                 overflow: auto;
-                padding: 16px ;
-                max-width: 1000px;
+                padding: 16px;
                 @media(max-width:500px){
                     width: 100%;
                 }
             }
         }
-        }
 
+    }
+    @media(min-width: 500px) {
+        .layout {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+
+            > .nav {
+                flex-shrink: 0;
+            }
+
+            > .content {
+                display: flex;
+                flex-direction: row;
+                flex-grow: 1;
+                margin-top: 70px;
+                margin-left: 100px;
+            }
+
+            > .aside {
+                background: rgb(255, 255, 255);
+                padding: 16px 0;
+                height: 100%;
+                z-index: $aside-index;
+                color: rgb(36, 41, 46);
+                width: 180px;
+
+                > h2 {
+                    @media (min-width: 500px) {
+                        padding: 0 16px;
+                        width: 180px;
+                    }
+                }
+            }
+        }
+        >.main {
+            max-width: 1000px;
+        }
+    }
 
 </style>
