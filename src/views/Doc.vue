@@ -46,12 +46,16 @@
 <style lang="scss" scoped>
     $aside-index : 10;
     .layout {
+        max-width: 1200px;
         > .content {
         > .aside {
             font-size: 14px;
             padding: 16px;
             background-color:rgb(36, 41, 46);
             color: rgb(255,255,255);
+            @media(min-width:500px){
+                width: 250px;
+            }
             > h4 {
                 padding: 16px 12px;
                 text-align: center;
