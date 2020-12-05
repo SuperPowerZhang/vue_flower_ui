@@ -69,20 +69,23 @@
            color: rgb(36, 41, 46);
            @media (min-width: 500px) {
                width: 180px;
-
            }
            >h2 {
                margin-bottom: 4px;
                padding: 0 16px;
-               width: 110px;
+               width: 180px;
+               text-align: center;
                @media (max-width: 500px) {
                    font-size: 18px;
                    font-weight: 700;
                    padding: 0 8px;
+                   width: 110px;
                }
            }
            >ol {
                >li {
+                   text-align: center;
+                   border-radius: 6px;
                    >a {
                        display: block;
                        padding: 6px 8px;
@@ -107,6 +110,7 @@
             >.main{
                 overflow: auto;
                 padding: 16px ;
+                max-width: 1000px;
                 @media(max-width:500px){
                     width: 100%;
                 }

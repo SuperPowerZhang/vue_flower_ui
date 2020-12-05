@@ -17,7 +17,7 @@
 
 <style lang="scss">
     .flower-container{
-        /*flex-direction: column;*/
+        max-width: 1000px;
         >.flower-container-h3{
             font-size: 20px;
             color: rgb(36, 41, 46);
@@ -33,6 +33,7 @@
         >.flower-container-lib{
             border-radius: 6px;
             display: flex;
+            max-width: 1000px;
             justify-content: space-between;
             flex-wrap: wrap;
             padding: 16px;

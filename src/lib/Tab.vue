@@ -1,6 +1,6 @@
 <template>
 
-    <div> <slot /></div>
+    <div class="flower-tab"> <slot /></div>
 </template>
 
 <script lang="ts">
@@ -10,6 +10,5 @@
     }
 </script>
 
-<style >
-
+<style lang="scss">
 </style>

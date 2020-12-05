@@ -3,14 +3,15 @@
         <template v-slot:description>默认Tabs</template>
         <template v-slot:lib>
             <Tabs v-model:selected="x" >
-                <Tab title="导航1" >Tab组件1</Tab>
-                <Tab title="导航2">Tab组件1</Tab>
-                <Tab >Tab组件3</Tab>
+                <Tab title="导航1" >导航1内容</Tab>
+                <Tab title="导航2">导航2内容</Tab>
+                <Tab >导航3内容</Tab>
+
             </Tabs>
         </template>
     </FlowerContainer>
 </template>
-
+<!--                -->
 
 <script lang="ts">
     import Tabs from "../lib/Tabs.vue";
