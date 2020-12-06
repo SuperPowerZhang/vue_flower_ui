@@ -4,7 +4,7 @@ cd dist &&
 git init &&
 git add . &&
 git commit -m "update" &&
-git branch -M main &&&&
+git branch -M main &&
 git remote add origin git@github.com:SuperPowerZhang/flower-ui-website.git &&
 git push -f -u origin main &&
 cd -

@@ -7,10 +7,11 @@
         <component :is="component"/>
         </div>
         <div class="flower-container-code">
-        <Button @click="toggle" theme="text" >代码查看/隐藏</Button>
-        <div v-if="codeVisible">
+            <Button @click="hideCode" theme="text" v-if="codeVisible">隐藏代码</Button>
+            <Button @click="showCode" theme="text" v-if="!codeVisible" >查看代码</Button>
+            <div v-if="codeVisible">
               <pre  class="language-html" v-html="html" />
-        </div>
+            </div>
         </div>
     </div>
 </template>
@@ -35,10 +36,13 @@
             const html = computed(() => {
                 return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html')
             })
-            const toggle=()=>{
-                codeVisible.value=!codeVisible.value
+            const showCode=()=>{
+                codeVisible.value=true
             }
-            return {Prism,html,codeVisible,toggle}
+            const hideCode=()=>{
+                codeVisible.value=false
+            }
+            return {Prism,html,codeVisible,showCode,hideCode}
         }
     }
 </script>
