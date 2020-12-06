@@ -16,6 +16,12 @@
         <template v-slot:description>对比导航栏</template>
         <template v-slot:lib>
             <Tab2Demo />
+            <div>
+                <Button>查看代码</Button>
+                <div>
+                    <pre>{{Tab2Demo.__sourceCode}}</pre>
+                </div>
+            </div>
         </template>
     </FlowerContainer>
     <FlowerContainer>
@@ -49,7 +55,6 @@
     import Tab1Demo from "./Tab1Demo.vue";
     import Tab2Demo from "./Tab2Demo.vue";
     import Button from "../lib/Button.vue";
-    console.log(Tab1Demo.__sourceCode)
     export default {
         name: "TabsDemo",
         components: {Button, Tab1Demo, Tab2Demo, Tab,Tabs,FlowerContainer},
@@ -59,7 +64,7 @@
             const z=ref('导航1')
             const a=ref('导航1')
             const theme=["black","simple","column"]
-            return {a,x,y,z,theme}
+            return {a,x,y,z,theme,Tab1Demo,Tab2Demo}
         }
     }
 </script>

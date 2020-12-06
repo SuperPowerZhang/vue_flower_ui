@@ -28,7 +28,6 @@
             const select=(title:String)=>{
                 context.emit('update:selected',title)
             }
-            console.log(defaults[0].props)
             defaults.forEach((tag:any)=>{
                 if(tag.type!==Tab){
                     throw new Error("Tabs里面必须是Tab类型组件")

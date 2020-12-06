@@ -2,7 +2,7 @@
 // @ts-nocheck
 //
 //
-// import { md } from "./plugin/md"
+// import { md } from "./plugins/md"
 //
 // export default {
 //     plugins :[md()]
