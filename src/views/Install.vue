@@ -1,28 +1,15 @@
 <template>
-    <article class="markdown-body">
-        <h1>Unicorns</h1>
-        <p>All the things</p>
-    </article>
-    # 安装
+    <article class="markdown-body" v-html="md" />
 
-    打开终端运行下列命令：
-
-    ```
-    npm install flower-ui-1
-    ```
-
-    或
-
-    ```
-    yarn add flower-ui-1
-    ```
-
-    下一节：[开始使用](#/doc/get-started)
 </template>
 
 <script>
+    import md from '../markdown/install.md'
     export default {
-        name: "Install"
+        name: "Install",
+        data(){
+            return {md}
+        }
     }
 </script>
 
