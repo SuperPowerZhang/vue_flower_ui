@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Users\software\node.js\node.exe C:\Users\software\Yarn\bin\yarn.js add babel-plogin-syntax-dynamic-import --save-dev
+  C:\Users\software\node.js\node.exe C:\Users\software\Yarn\bin\yarn.js add prismjs
 
 PATH: 
   C:\Users\software\cmder\vendor\git-for-windows\mingw64\bin;C:\Users\software\cmder\vendor\git-for-windows\usr\bin;C:\Users\Administrator\bin;D:\code\program\flower-ui-1\node_modules\.bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0;C:\windows\System32\OpenSSH;C:\Users\software\node.js;C:\Users\software\Yarn\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\Administrator\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Users\Administrator\AppData\Local\Programs\Python\Python36-32;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\WebStorm 2019.3.1\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\Yarn\bin
@@ -14,17 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.npm.taobao.org/babel-plogin-syntax-dynamic-import: Not found
-      at Request.params.callback [as _callback] (C:\Users\software\Yarn\lib\cli.js:66097:18)
-      at Request.self.callback (C:\Users\software\Yarn\lib\cli.js:140749:22)
-      at Request.emit (events.js:315:20)
-      at Request.<anonymous> (C:\Users\software\Yarn\lib\cli.js:141721:10)
-      at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (C:\Users\software\Yarn\lib\cli.js:141643:12)
-      at Object.onceWrapper (events.js:421:28)
-      at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (_stream_readable.js:1327:12)
-      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+  Error: EPERM: operation not permitted, unlink 'D:\code\program\flower-ui-1\node_modules\esbuild\esbuild.exe'
 
 npm manifest: 
   {
@@ -34,14 +24,26 @@ npm manifest:
       "dev": "vite",
       "build": "vite build"
     },
+    "files": [
+      "dist/lib/*"
+    ],
+    "main": "dist/lib/flower.js",
+    "module": "dist/lib/flower.esm.js",
     "dependencies": {
-      "vue": "^3.0.0-rc.1",
+      "github-markdown-css": "4.0.0",
+      "marked": "1.1.1",
+      "prismjs": "1.21.0",
+      "vue": "3.0.0",
       "vue-router": "4.0.0-beta.3"
     },
     "devDependencies": {
-      "@vue/compiler-sfc": "^3.0.0-rc.1",
-      "vite": "^1.0.0-rc.1",
-      "sass": "1.26.10"
+      "@vue/compiler-sfc": "3.0.0",
+      "rollup-plugin-esbuild": "2.5.0",
+      "rollup-plugin-scss": "2.6.0",
+      "rollup-plugin-terser": "7.0.2",
+      "rollup-plugin-vue": "6.0.0-beta.10",
+      "sass": "1.26.11",
+      "vite": "1.0.0-rc.1"
     }
   }
 
@@ -135,6 +137,18 @@ Lockfile:
     integrity sha512-yfLbTdNS6amI/2OpmbiBoW12vngr5NW2jCJVZSBEz+H5KfUJZ2M7sDjk0U6GOOdCWFVScShte29o9NezJ53TPw==
     dependencies:
       "@rollup/pluginutils" "^3.0.8"
+  
+  "@rollup/plugin-node-resolve@^11.0.0":
+    version "11.0.0"
+    resolved "https://registry.npm.taobao.org/@rollup/plugin-node-resolve/download/@rollup/plugin-node-resolve-11.0.0.tgz?cache=0&sync_timestamp=1606766485874&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40rollup%2Fplugin-node-resolve%2Fdownload%2F%40rollup%2Fplugin-node-resolve-11.0.0.tgz#770458fb26691a686c5f29f37dded94832ffce59"
+    integrity sha1-dwRY+yZpGmhsXynzfd7ZSDL/zlk=
+    dependencies:
+      "@rollup/pluginutils" "^3.1.0"
+      "@types/resolve" "1.17.1"
+      builtin-modules "^3.1.0"
+      deepmerge "^4.2.2"
+      is-module "^1.0.0"
+      resolve "^1.19.0"
   
   "@rollup/plugin-node-resolve@^9.0.0":
     version "9.0.0"
@@ -439,6 +453,11 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
     integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
+  
+  babel-plugin-syntax-dynamic-import@^6.18.0:
+    version "6.18.0"
+    resolved "https://registry.npm.taobao.org/babel-plugin-syntax-dynamic-import/download/babel-plugin-syntax-dynamic-import-6.18.0.tgz#8d6a26229c83745a9982a441051572caa179b1da"
+    integrity sha1-jWomIpyDdFqZgqRBBRVyyqF5sdo=
   
   balanced-match@^1.0.0:
     version "1.0.0"
@@ -911,6 +930,11 @@ Lockfile:
     dependencies:
       pump "^3.0.0"
   
+  github-markdown-css@^4.0.0:
+    version "4.0.0"
+    resolved "https://registry.npm.taobao.org/github-markdown-css/download/github-markdown-css-4.0.0.tgz#be9f4caf7a389228d4c368336260ffc909061f35"
+    integrity sha1-vp9Mr3o4kijUw2gzYmD/yQkGHzU=
+  
   glob-parent@^5.1.0, glob-parent@~5.1.0:
     version "5.1.1"
     resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.1.tgz#b6c1ef417c4e5663ea498f1c45afac6916bbc229"
@@ -1375,6 +1399,11 @@ Lockfile:
     dependencies:
       sourcemap-codec "^1.4.4"
   
+  marked@^1.2.5:
+    version "1.2.5"
+    resolved "https://registry.npm.taobao.org/marked/download/marked-1.2.5.tgz?cache=0&sync_timestamp=1605794829641&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-1.2.5.tgz#a44b31f2a0b8b5bfd610f00d55d1952d1ac1dfdb"
+    integrity sha1-pEsx8qC4tb/WEPANVdGVLRrB39s=
+  
   media-typer@0.3.0:
     version "0.3.0"
     resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
@@ -1586,6 +1615,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
     integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
   
+  path@^0.12.7:
+    version "0.12.7"
+    resolved "https://registry.npm.taobao.org/path/download/path-0.12.7.tgz#d4dc2a506c4ce2197eb481ebfcd5b36c0140b10f"
+    integrity sha1-1NwqUGxM4hl+tIHr/NWzbAFAsQ8=
+    dependencies:
+      process "^0.11.1"
+      util "^0.10.3"
+  
   picomatch@^2.0.4, picomatch@^2.0.5, picomatch@^2.2.1, picomatch@^2.2.2:
     version "2.2.2"
     resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"
@@ -1698,6 +1735,11 @@ Lockfile:
       source-map "^0.6.1"
       supports-color "^6.1.0"
   
+  process@^0.11.1:
+    version "0.11.10"
+    resolved "https://registry.npm.taobao.org/process/download/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
+    integrity sha1-czIwDoQBYb2j5podHZGn1LwW8YI=
+  
   pump@^3.0.0:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/pump/-/pump-3.0.0.tgz#b4a2116815bde2f4e1ea602354e8c75565107a64"
@@ -1750,7 +1792,7 @@ Lockfile:
       http-errors "~1.6.2"
       path-is-absolute "1.0.1"
   
-  resolve@^1.1.7, resolve@^1.17.0:
+  resolve@^1.1.7, resolve@^1.17.0, resolve@^1.19.0:
     version "1.19.0"
     resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.19.0.tgz#1af5bf630409734a067cae29318aac7fa29a267c"
     integrity sha512-rArEXAgsBG4UgRGcynxWIWKFvh/XZCcS8UJdHhwy91zwAvCZIbcs+vAbflgBnNjYMs/i/i+/Ux6IZhML1yPvxg==
@@ -1841,7 +1883,7 @@ Lockfile:
     dependencies:
       chokidar ">=2.0.0 <4.0.0"
   
-  scss@^0.2.4:
+  scss@0.2.4:
     version "0.2.4"
     resolved "https://registry.npm.taobao.org/scss/download/scss-0.2.4.tgz#040d903ed37c5d4fa4ad33ae1fd389ac12a4e065"
     integrity sha1-BA2QPtN8XU+krTOuH9OJrBKk4GU=
@@ -2024,6 +2066,13 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
     integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
   
+  util@^0.10.3:
+    version "0.10.4"
+    resolved "https://registry.npm.taobao.org/util/download/util-0.10.4.tgz#3aa0125bfe668a4672de58857d3ace27ecb76901"
+    integrity sha1-OqASW/5mikZy3liFfTrOJ+y3aQE=
+    dependencies:
+      inherits "2.0.3"
+  
   vary@^1.1.2:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
@@ -2086,6 +2135,11 @@ Lockfile:
       slash "^3.0.0"
       vue "^3.0.2"
       ws "^7.3.1"
+  
+  vue-router@4.0.0-beta.3:
+    version "4.0.0-beta.3"
+    resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.0-beta.3.tgz?cache=0&sync_timestamp=1605893104601&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-4.0.0-beta.3.tgz#e46f45807023a4b8ce73a143a216b4c9ea3eb243"
+    integrity sha1-5G9FgHAjpLjOc6FDoha0yeo+skM=
   
   vue@^3.0.0-rc.1, vue@^3.0.2:
     version "3.0.2"

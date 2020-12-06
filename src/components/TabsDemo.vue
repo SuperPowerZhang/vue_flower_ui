@@ -6,7 +6,8 @@
             <div>
                 <Button>查看代码</Button>
                 <div>
-                    <pre>{{Tab1Demo.__sourceCode}}</pre>
+              <pre  class="language-html" v-html="Prism.highlight(
+                   Tab1Demo.__sourceCode, Prism.languages.html,'html')" />
                 </div>
             </div>
 
@@ -55,16 +56,20 @@
     import Tab1Demo from "./Tab1Demo.vue";
     import Tab2Demo from "./Tab2Demo.vue";
     import Button from "../lib/Button.vue";
+    import 'prismjs';
+    import 'prismjs/themes/prism.css';
+    const Prism=(window as any).Prism
+
     export default {
         name: "TabsDemo",
-        components: {Button, Tab1Demo, Tab2Demo, Tab,Tabs,FlowerContainer},
+        components: {Button, Tab,Tabs,FlowerContainer,Tab1Demo,Tab2Demo},
         setup(){
             const x=ref('导航1')
             const y=ref('导航1')
             const z=ref('导航1')
             const a=ref('导航1')
             const theme=["black","simple","column"]
-            return {a,x,y,z,theme,Tab1Demo,Tab2Demo}
+            return {a,x,y,z,theme,Tab1Demo,Tab2Demo,Prism}
         }
     }
 </script>

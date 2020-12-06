@@ -1,17 +1,26 @@
 <template>
     <div class="flower-container">
         <h3 class="flower-container-h3">
+<!--            标题-->
             <slot name="description"></slot>
         </h3>
         <div class="flower-container-lib">
+
                 <slot name="lib"></slot>
         </div>
+<!--        <div class="flower-container-demo">-->
+
+<!--        </div>-->
     </div>
 </template>
 
 <script lang="ts">
     export default {
-        name: "FlowerContainer"
+        name: "FlowerContainer",
+        // props:{
+        //     component:Object
+        //
+        // }
     }
 </script>
 
