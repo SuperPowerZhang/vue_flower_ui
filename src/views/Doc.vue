@@ -46,6 +46,7 @@
 <style lang="scss" scoped>
     $aside-index : 10;
     .layout {
+        background-color: rgb(246, 248, 250);
         max-width: 1200px;
         > .content {
         > .aside {

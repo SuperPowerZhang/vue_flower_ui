@@ -1,8 +1,7 @@
 <demo>
-    对比导航栏
+    纵向导航栏
 </demo>
 <template>
-
     <Tabs v-model:selected="selected" :theme="theme" >
         <Tab title="导航1" >导航1内容</Tab>
         <Tab title="导航2">导航2内容</Tab>
@@ -17,16 +16,12 @@
     import Tab from "../lib/Tab.vue"
     import {ref} from "vue"
     export default {
-        name: "Tab2Demo",
+        name: "Tab4Demo",
         components: { Tab,Tabs},
         setup(){
             const selected=ref('导航1')
-            const theme="black"
+            const theme="column"
             return {selected,theme}
         }
     }
 </script>
-
-<style >
-
-</style>

@@ -29,9 +29,9 @@
                 context.emit('update:selected',title)
             }
             defaults.forEach((tag:any)=>{
-                // if(tag.type!==Tab){
-                //     throw new Error("Tabs里面必须是Tab类型组件")
-                // }
+                if(tag.type!==Tab){
+                    throw new Error("Tabs里面必须是Tab类型组件")
+                }
                 tag['title']=tag.props?.title?tag.props.title:"默认标题"
             })
             const titles=defaults.map((tag:any)=>{
@@ -182,13 +182,14 @@
             }
         }
         &.theme-simple{
-            padding-left: 0;
-            padding-right: 0;
+            /*padding-left: 0;*/
+            /*padding-right: 0;*/
             margin-right:  $distance;
-            background-color: rgb(246, 248, 250);
+
             >div{
                 text-align: left;
                 padding: 16px;
+                background-color: rgb(246, 248, 250);
             }
         }
         &.theme-column{

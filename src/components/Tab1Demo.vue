@@ -3,10 +3,10 @@
 </demo>
 
 <template>
-    <Tabs v-model:selected="x" >
+    <Tabs v-model:selected="selected" >
         <Tab title="导航1" >导航1内容</Tab>
         <Tab title="导航2">导航2内容</Tab>
-        <Tab >导航3内容</Tab>
+        <Tab >默认标题的内容</Tab>
     </Tabs>
 </template>
 
@@ -20,8 +20,8 @@
         name: "Tab1Demo",
         components: {Tab,Tabs},
         setup(){
-            const x=ref('导航1')
-            return {x}
+            const selected=ref('导航1')
+            return {selected}
         }
     }
 </script>

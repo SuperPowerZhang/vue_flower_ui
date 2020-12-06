@@ -1,37 +1,58 @@
 <template>
     <div class="flower-container">
         <h3 class="flower-container-h3">
-<!--            标题-->
-            <slot name="description"></slot>
+            {{component.__sourceCodeTitle}}
         </h3>
         <div class="flower-container-lib">
-
-                <slot name="lib"></slot>
+        <component :is="component"/>
         </div>
-<!--        <div class="flower-container-demo">-->
-
-<!--        </div>-->
+        <div class="flower-container-code">
+        <Button @click="toggle" theme="text" size="small">查看/隐藏代码</Button>
+        <div v-if="codeVisible">
+              <pre  class="language-html" v-html="html" />
+        </div>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
+
+    import Button from "./Button.vue";
+    import 'prismjs';
+    import 'prismjs/themes/prism.css';
+    import {computed,ref} from 'vue';
+    const Prism=(window as any).Prism
     export default {
         name: "FlowerContainer",
-        // props:{
-        //     component:Object
-        //
-        // }
+        props:{
+            component:Object
+        },
+        components:{
+            Button
+        },
+        setup(props:any){
+            const codeVisible=ref(false)
+            const html = computed(() => {
+                return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html')
+            })
+            const toggle=()=>{
+                codeVisible.value=!codeVisible.value
+            }
+            return {Prism,html,codeVisible,toggle}
+        }
     }
 </script>
 
 <style lang="scss">
     .flower-container{
         max-width: 1000px;
+        border-radius: 6px;
+        margin-bottom: 16px;
         >.flower-container-h3{
             font-size: 20px;
             color: rgb(36, 41, 46);
-            border-bottom:1px solid rgb(234, 236, 239);
-            padding-bottom: 16px;
+            padding: 8px;
+            /*border-bottom: 1px solid rgb(209, 213, 218);*/
             @media (max-width: 500px) {
                 width: 100%;
                 margin-top: 8px;
@@ -41,11 +62,11 @@
         }
         >.flower-container-lib{
             border-radius: 6px;
-            /*display: flex;*/
             max-width: 1000px;
-            /*justify-content: space-between;*/
             flex-wrap: wrap;
             padding: 16px;
+            background-color: rgb(255, 255, 255);
+            border:1px solid rgb(225, 228, 232);
             @media (max-width: 500px) {
                 width: 100%;
                 padding: 8px;
