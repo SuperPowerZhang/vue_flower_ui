@@ -2,21 +2,20 @@
     <FlowerContainer>
         <template v-slot:description>默认导航栏</template>
         <template v-slot:lib>
-            <Tabs v-model:selected="x" >
-                <Tab title="导航1" >导航1内容</Tab>
-                <Tab title="导航2">导航2内容</Tab>
-                <Tab >导航3内容</Tab>
-            </Tabs>
+            <Dialog1Demo />
+            <div>
+                <Button>查看代码</Button>
+                <div>
+                    <pre>{{Dialog1Demo.__sourceCode}}</pre>
+                </div>
+            </div>
+
         </template>
     </FlowerContainer>
     <FlowerContainer>
         <template v-slot:description>对比导航栏</template>
         <template v-slot:lib>
-            <Tabs v-model:selected="y" :theme="theme[0]" >
-                <Tab title="导航1" >导航1内容</Tab>
-                <Tab title="导航2">导航2内容</Tab>
-                <Tab >导航3内容</Tab>
-            </Tabs>
+            <Dialog2Demo />
         </template>
     </FlowerContainer>
     <FlowerContainer>
@@ -47,9 +46,13 @@
     import Tab from "../lib/Tab.vue"
     import FlowerContainer from "../lib/FlowerContainer.vue"
     import {ref} from "vue"
+    import Dialog1Demo from "./Tabs1Demo.vue";
+    import Dialog2Demo from "./Tab2Demo.vue";
+    import Button from "../lib/Button.vue";
+    console.log(Dialog1Demo.__sourceCode)
     export default {
         name: "TabsDemo",
-        components: {Tab,Tabs,FlowerContainer},
+        components: {Button, Dialog2Demo, Dialog1Demo, Tab,Tabs,FlowerContainer},
         setup(){
             const x=ref('导航1')
             const y=ref('导航1')

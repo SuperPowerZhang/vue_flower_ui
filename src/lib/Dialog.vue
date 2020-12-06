@@ -5,7 +5,10 @@
             <div class="flower-dialog">
         <header>
             <slot name="title"/>
-            <i class="iconfont" @click="close">&#xe644;</i></header>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-guanbi"></use>
+            </svg>
+        </header>
         <main>
            <slot name="content"/>
         </main>
