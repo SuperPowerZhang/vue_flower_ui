@@ -84,7 +84,7 @@
             }
         }
             >.main{
-                overflow: auto;
+                flex:1;
                 padding: 16px;
                 @media(max-width:500px){
                     width: 100%;
@@ -97,18 +97,14 @@
         .layout {
             display: flex;
             flex-direction: column;
-            height: 100vh;
-
             > .nav {
                 flex-shrink: 0;
             }
-
             > .content {
                 display: flex;
                 flex-direction: row;
                 flex-grow: 1;
-                margin-top: 70px;
-                margin-left: 100px;
+                margin: 70px 100px;
             }
 
             > .aside {

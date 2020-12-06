@@ -20,11 +20,10 @@ import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "flower-ui-1"
     </div>
 </template>
 <script>
-    import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "gulu-ui-1"
+    import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "flower-ui-1"
     export default {
         components: {Button}
     }
 </script>
     
 ```
-下一节：[查看Dialog组件](#/doc/dialog)
