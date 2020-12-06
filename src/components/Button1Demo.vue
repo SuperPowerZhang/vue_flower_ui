@@ -11,7 +11,7 @@
 
 <script lang="ts">
     // 注意：使用时这里的路径需改为自己的路径
-    import Button from "../lib/Button.vue";
+    import {Button} from "../lib/index";
     export default {
         name: "Button1Demo",
         components:{
