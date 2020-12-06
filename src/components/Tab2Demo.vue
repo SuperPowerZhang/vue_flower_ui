@@ -1,7 +1,8 @@
+<demo>
+    对比导航栏
+</demo>
 <template>
-    <demo>
-        对比导航栏
-    </demo>
+
     <Tabs v-model:selected="y" :theme="theme" >
         <Tab title="导航1" >导航1内容</Tab>
         <Tab title="导航2">导航2内容</Tab>
@@ -15,7 +16,7 @@
     import Tab from "../lib/Tab.vue"
     import {ref} from "vue"
     export default {
-        name: "Dialog2",
+        name: "Dialog2Demo",
         components: { Tab,Tabs},
         setup(){
             const y=ref('导航1')

@@ -16,7 +16,7 @@
     import Tab from "../lib/Tab.vue"
     import {ref} from "vue"
     export default {
-        name: "Dialog1",
+        name: "Tab1Demo",
         components: {Tab,Tabs},
         setup(){
             const x=ref('导航1')
