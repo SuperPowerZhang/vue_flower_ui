@@ -30,14 +30,18 @@
                 type: Boolean,
                 default: false,
             },
+            other:{
+                type:String,
+                default:"normal"
+            }
         },
         setup(props){
-            const {theme,size,loading}=props;
+            const {theme,size,other}=props;
             const classes=computed(()=>{
                 return {
                     [`theme-${theme}`]:theme,
                     [`size-${size}`]:size,
-                    [`loading-${loading}`]:loading
+                    [`other-${other}`]:other
                 }
             })
             return {classes}
@@ -89,7 +93,7 @@
                 background-color: rgb(246, 248, 250);
                 color: rgb(209, 213, 218);
             }
-            &.loading-true{
+            &.other-loading{
                 background-color:rgb(248, 249, 250);
                 color:$color;
                 >.flower-loadingFlag{
@@ -148,7 +152,7 @@
                 padding:$padding-big ;
             }
         }
-        &.theme-wide{
+        &.other-wide{
             width: 250px;
             color: rgb(42, 41, 52);
             background-color:rgb(248, 249, 250);
