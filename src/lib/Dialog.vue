@@ -7,7 +7,7 @@
             <span>
                 <slot name="title"/>
             </span>
-            <svg class="icon" aria-hidden="true">
+            <svg class="icon" aria-hidden="true" @click="close">
                 <use xlink:href="#icon-guanbi"></use>
             </svg>
         </header>
@@ -63,16 +63,19 @@
                 }
             }
             const clickOk=(e:Event)=>{
-                if(props.ok?.()===true){
-                    close()
+                if(props.ok){
+                    if(props.ok()===true){
+                        close()
+                    }
                 }
                 e.stopPropagation()
             }
             const clickCancel=(e:Event)=>{
-                if(props.ok?.()===true){
-                    //emit cancel目前未用到
-                    context.emit('cancel')
-                    close()
+                if(props.cancel){
+                    if(props.cancel()===true){
+                        context.emit('cancel')
+                        close()
+                    }
                 }
                 e.stopPropagation()
             }

@@ -6,7 +6,7 @@
     <Tabs v-model:selected="selected" >
         <Tab title="导航1" >导航1内容</Tab>
         <Tab title="导航2">导航2内容</Tab>
-        <Tab >默认标题的内容</Tab>
+        <Tab title="导航3">导航3的内容</Tab>
     </Tabs>
 </template>
 

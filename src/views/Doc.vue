@@ -43,7 +43,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
     $aside-index : 10;
     .layout {
         background-color: rgb(246, 248, 250);

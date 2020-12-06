@@ -1,14 +1,15 @@
 <template>
-
-    <div class="flower-tab"> <slot /></div>
+    <div class="flower-tab" :title="title"> <slot /></div>
 </template>
 
 <script lang="ts">
     export default {
         name: "Tab",
-
+        props:{
+            title:String
+        }
     }
 </script>
 
-<style lang="scss">
+<style >
 </style>

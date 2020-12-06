@@ -4,7 +4,7 @@
 
 <template>
     <Button  @click="toggle" >展示</Button>
-    <Dialog v-model:visible="visible" :WrapperClose="WrapperClose" :ok="ok" :title="title" >
+    <Dialog v-model:visible="visible" :WrapperClose="WrapperClose" :ok="ok" :title="title" :cancel="cancel">
         <template v-slot:title>
             <span>标题替换提示</span>
         </template>

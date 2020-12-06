@@ -1,33 +1,45 @@
 <template>
-    <button @click="toggle" :class="{checked:value}" :class="{[`theme-${theme}`]:theme}">
+    <button @click="toggle" :class="classes"  :value="value">
         <span></span>
     </button>
 </template>
 
 <script lang="ts">
+    import {computed} from 'vue';
     export default {
-        props:{
-            value:Boolean,
-            theme:{
-                type:String,
-                default:'normal'
+        props: {
+            value: {
+                type: Boolean,
+                default: true
+            },
+            theme: {
+                type: String,
+                default: 'normal'
             }
         },
         name: "Switch.vue",
-        setup(props:any,context:any){
-            const toggle=()=>{
-                context.emit('update:value',!props.value)
+        setup(props: any, context: any) {
+            const {value, theme} = props;
+            const classes=computed(()=>{
+                return {
+                    [`theme-${theme}`]:theme,
+                    [`value-${value}`]:value
+                }
+            })
+            const toggle = () => {
+                context.emit('update:value', !value)
             }
-            return {toggle}
+            return {toggle, classes}
         }
     }
+
 </script>
 
 <style scoped lang="scss">
     $h: 32px;
     $border-color: #d9d9d9;
     $color: #333;
-    $blue: rgb(200, 225, 255);
+    $blue: rgb(3, 102, 214);
     $green:rgb(44, 151, 75);
     $radius: 4px;
     $red: red;
@@ -51,7 +63,7 @@
             border-radius: ($h - 4px)/2;
             transition: left 250ms;
         }
-        &.checked{
+        &.value-true{
             background-color: $green;
             border-color: $green;
             &.theme-simple{
@@ -59,7 +71,7 @@
                 border-color: $blue;
             }
         }
-        &.checked > span{
+        &.value-true > span{
             left: 34px ;
         }
     }

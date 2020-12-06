@@ -1,10 +1,15 @@
+
+
+
 <template>
-<!--    <slot />-->
     <div class="flower-tabs-hContainer" :class="{[`theme-${theme}`]:theme}">
-        <div @click="select(t)" class="flower-tab-h" :class="{selected:t===selected}" v-for="(t,index) in titles" :key="index">{{t}}</div>
+        <div @click="select(t)" class="flower-tab-h"
+             :class="{selected:t===selected}" v-for="(t,index) in titles" :key="index">
+            {{t}}
+        </div>
     </div>
     <div class="flower-tabs-contentContainer" :class="{[`theme-${theme}`]:theme}">
-        <component  v-for="(c,index) in defaults" :is="c"  :class="{selected:c.title===selected}" :key="index" />
+        <component  v-for="(c,index) in defaults" :is="c"  :class="{selected:c.props.title===selected}" :key="index" />
     </div>
 </template>
 
@@ -29,13 +34,12 @@
                 context.emit('update:selected',title)
             }
             defaults.forEach((tag:any)=>{
-                if(tag.type!==Tab){
+                if(tag.type.name!==Tab.name){
                     throw new Error("Tabs里面必须是Tab类型组件")
                 }
-                tag['title']=tag.props?.title?tag.props.title:"默认标题"
             })
             const titles=defaults.map((tag:any)=>{
-                    return tag.title
+                    return tag.props.title
             })
             return {titles,defaults,select}
         }

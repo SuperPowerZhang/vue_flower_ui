@@ -62,7 +62,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
     $green: #02bcb0;
     $border-radius: 3px;
     $color: #007974;
