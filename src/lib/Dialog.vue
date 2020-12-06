@@ -4,7 +4,9 @@
         <div class="flower-dialogWrapper" @click="clickWrapper">
             <div class="flower-dialog">
         <header>
-            <slot name="title"/>
+            <span>
+                <slot name="title"/>
+            </span>
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-guanbi"></use>
             </svg>
@@ -113,9 +115,13 @@
                 font-weight: 600;
                 border-radius: 6px 6px 0  0;
                 border-bottom: $border ;
-            display: flex;
-            justify-content: space-between;
-            >i{
+                display: flex;
+                justify-content: space-between;
+            >span{
+                margin-left: 0;
+            }
+            >svg{
+                margin-right: 0;
                 font-weight: 400;
                 color: rgb(88, 96, 105);
             }

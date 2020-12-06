@@ -7,7 +7,7 @@
         <component :is="component"/>
         </div>
         <div class="flower-container-code">
-        <Button @click="toggle" theme="text" size="small">查看/隐藏代码</Button>
+        <Button @click="toggle" theme="text" size="small">代码查看/隐藏</Button>
         <div v-if="codeVisible">
               <pre  class="language-html" v-html="html" />
         </div>
