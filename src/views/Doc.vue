@@ -68,7 +68,7 @@
                         padding-bottom:8px;
                         text-decoration: none;
                         font-weight: 600;
-                        &.router-link-exact-active{
+                        &.router-link-active{
                             color:rgb(190, 189, 165)
                         }
                     }
