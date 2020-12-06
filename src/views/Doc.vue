@@ -11,10 +11,10 @@
                </ol>
             <h4>组件列表</h4>
             <ol>
-                <li><router-link to="/doc/switch">Switch 组件</router-link></li>
-                <li><router-link to="/doc/button">Button 组件</router-link></li>
-                <li><router-link to="/doc/dialog">Dialog 组件</router-link></li>
                 <li><router-link to="/doc/tabs">Tabs 组件</router-link></li>
+                <li><router-link to="/doc/dialog">Dialog 组件</router-link></li>
+                <li><router-link to="/doc/button">Button 组件</router-link></li>
+                <li><router-link to="/doc/switch">Switch 组件</router-link></li>
             </ol>
         </div>
         <div class="main">
@@ -48,6 +48,9 @@
     .layout {
         background-color: rgb(246, 248, 250);
         max-width: 1200px;
+        @media(max-width:500px){
+            min-height: 100vh;
+        }
         > .content {
         > .aside {
             font-size: 14px;

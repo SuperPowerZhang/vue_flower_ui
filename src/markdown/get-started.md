@@ -27,3 +27,4 @@ import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "flower-ui-1"
 </script>
     
 ```
+下一节：[查看Dialog组件](#/doc/dialog)
