@@ -9,9 +9,12 @@ import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "flower-ui-1"
 
 就可以使用我提供的组件了。
 
-## Vue 单文件组件
+## 组件示例
+可点击[Tabs](#/doc/tabs)、[Dialog](#/doc/dialog)、[Button](#/doc/button)、[Switch](#/doc/switch)查看各组件示例。
 
-代码示例：
+## 使用示例
+
+Vue 单文件组件中使用：
 
 ```
 <template>

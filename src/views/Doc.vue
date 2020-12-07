@@ -5,7 +5,7 @@
            <div class="aside" v-if="asideVisible">
                <h4>文档</h4>
                <ol>
-                   <li><router-link to="/doc">介绍</router-link></li>
+                   <li><router-link to="/doc/intro">介绍</router-link></li>
                    <li><router-link to="/doc/install">安装</router-link></li>
                    <li><router-link to="/doc/get-started">开始使用</router-link></li>
                </ol>
@@ -17,7 +17,7 @@
                 <li><router-link to="/doc/switch">Switch 组件</router-link></li>
             </ol>
         </div>
-        <div class="main">
+        <div class="main" >
             <router-view />
         </div>
     </div>
@@ -30,7 +30,7 @@
         Ref
     } from "vue";
     import Topnav from '../components/Topnav.vue';
-    // import Tabs from '../lib/Tabs.vue'
+
     export default {
         name: "Doc",
         components:{

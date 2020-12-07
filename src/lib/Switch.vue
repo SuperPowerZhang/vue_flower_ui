@@ -1,11 +1,13 @@
 <template>
-    <button @click="toggle" :class="classes"  :value="value">
+    <button @click="toggle" :class="{
+                    [`theme-${theme}`]:theme,
+                    [`value-${value}`]:value
+                }"  :value="value">
         <span></span>
     </button>
 </template>
 
 <script lang="ts">
-    import {computed} from 'vue';
     export default {
         props: {
             value: {
@@ -19,17 +21,10 @@
         },
         name: "Switch.vue",
         setup(props: any, context: any) {
-            const {value, theme} = props;
-            const classes=computed(()=>{
-                return {
-                    [`theme-${theme}`]:theme,
-                    [`value-${value}`]:value
-                }
-            })
-            const toggle = () => {
-                context.emit('update:value', !value)
+            const  toggle = () => {
+                context.emit('update:value', !props.value)
             }
-            return {toggle, classes}
+            return {toggle}
         }
     }
 
