@@ -1,6 +1,6 @@
 <template>
-    <div class="flower-tips-container">
-        <Button :other="other" @click="toggleAside">点击查看其他文档/组件示例</Button>
+    <div class="flower-tips-container" v-if="!asideVisible">
+        <Button :other="other" @click="toggleAside">点击查看文档/其他组件示例</Button>
     </div>
 </template>
 
@@ -21,7 +21,7 @@
             const toggleAside=()=>{
                 asideVisible.value=true
             }
-            return {other,toggleAside}
+            return {asideVisible,other,toggleAside}
         }
     }
 </script>

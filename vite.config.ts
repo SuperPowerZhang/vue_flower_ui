@@ -1,13 +1,5 @@
 
 // @ts-nocheck
-//
-//
-// import { md } from "./plugins/md"
-//
-// export default {
-//     plugins :[md()]
-// }
-
 
 import { md } from "./plugins/md";
 import fs from 'fs'

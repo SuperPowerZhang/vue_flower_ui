@@ -30,7 +30,6 @@
         Ref
     } from "vue";
     import Topnav from '../components/Topnav.vue';
-
     export default {
         name: "Doc",
         components:{
